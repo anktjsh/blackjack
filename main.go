@@ -1,9 +1,9 @@
 package main
 
 import (
-	"blackjack/gameutil"
 	"bufio"
 	"fmt"
+	"github.com/blackjack/gameutil"
 	"github.com/gookit/color"
 	"os"
 	"strings"
