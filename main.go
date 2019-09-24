@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"github.com/blackjack/gameutil"
+	"github.com/anktjsh/blackjack/gameutil"
 	"github.com/gookit/color"
 	"os"
 	"strings"
