@@ -1,11 +1,9 @@
 package gameutil
 
 import (
-	"bufio"
-	"fmt"
 	"github.com/gookit/color"
 	"strconv"
-	"strings"
+	"time"
 )
 
 var rules = []string{
@@ -19,18 +17,10 @@ var rules = []string{
 	"If you win the hand, you will earn the amount of money you bet on the hand",
 }
 
-func PrintRules(reader *bufio.Reader) {
-	//enter to continue, q to quit
-	//improve this
+func PrintRules() {
 	color.Magenta.Println("\nBasic Blackjack Rules:")
 	for i := 0; i < len(rules); i++ {
+		time.Sleep(1*time.Second)
 		color.Info.Println(strconv.Itoa(i+1)+".", rules[i])
-		fmt.Println("Press Enter to continue, Type anything else and then Press Enter to exit")
-		str, _ := reader.ReadString('\n')
-		if strings.Compare(str, "\n") == 0 {
-			continue
-		} else {
-			break
-		}
 	}
 }

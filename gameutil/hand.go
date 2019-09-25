@@ -1,6 +1,9 @@
 package gameutil
 
-import "time"
+import (
+	"github.com/gookit/color"
+	"time"
+)
 
 type Hand struct {
 	cards []PlayingCard
@@ -43,7 +46,8 @@ func (h *Hand) Clear() {
 	h.cards = h.cards[:0]
 }
 
-func (h *Hand) PrintHand() {
+func (h *Hand) PrintHand(eleven bool) {
 	time.Sleep(1 * time.Second)
 	PrintCards(h.cards)
+	color.Info.Println("Hand Value:", h.Value(eleven))
 }
