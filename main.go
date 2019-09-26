@@ -31,11 +31,7 @@ func main() {
 		text = strings.Replace(text, "\n", "", -1)
 		if strings.Compare(text, "1") == 0 {
 			game := new(gameutil.Game)
-			game.Deck = new(gameutil.Deck)
-			game.Money = gameutil.StartingMoney(reader)
-			game.Player = new(gameutil.Hand)
-			game.Dealer = new(gameutil.Hand)
-			game.Reader = reader
+			game.Init(reader)
 			game.Play()
 			if game.Money > 0 {
 				color.Info.Println("You ended with", game.Money, "Dollars!")
